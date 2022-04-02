@@ -26,6 +26,7 @@ body{
     padding-left: 20px;
     background-color: #CF2B2B;
     color: white;
+    /* colocar sombra */
 }
 
 h1{
@@ -67,14 +68,47 @@ h3{
 .pedido{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
     height: 210px;
     padding: 5px 15px;
     margin-left: 20px;
     border-radius: 10px;
+    border: 3px solid;
+    border-color: white;
     background-color: white;
 }
+
+.prato-selecionado{
+
+    border-color: green;
+
+}
+
+.bebida-selecionado{
+
+    border-color: green;
+
+}
+
+.sobremesa-selecionado{
+
+    border-color: green;
+
+}
+
+.valor-prato-selecionado{
+
+}
+
+.valor-bebida-selecionado{
+    
+}
+
+.valor-sobremesa-selecionado{
+    
+}
+
 
 .pedido > img{
     width: 140px;
@@ -83,10 +117,14 @@ h3{
     border-radius: 10px;
 }
 
-h4{
-    width: 140px;
-    font-size: 16px;
+.nome-pedido{
+    ont-size: 16px;
     font-weight: bold;
+}
+
+h4{
+    font-size: 16px;
+    font-weight: 400;
 }
 
 h5{
@@ -94,6 +132,10 @@ h5{
     font-size: 15px;
     color: #A6A6A6;
 
+}
+
+.valor{
+    display: flex;
 }
 
 
@@ -142,4 +184,14 @@ h6{
     font-size: 20px;
     color: white;
     font-weight: bold;
+}
+
+.confirmacao{
+    display: none;
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    left: 30%;
+    top: 10%;
+    background-color: green;
 }
