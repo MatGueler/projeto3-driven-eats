@@ -48,7 +48,7 @@ function escolherPrato(selecionado,nomePrato,valorPrato,icone){
     finalizar()
 }
 
-function escolherBebida(selecionado,nomeBebida,valorBebida){
+function escolherBebida(selecionado,nomeBebida,valorBebida,icone){
 
     const bebidaEscolhida = document.querySelector(selecionado);
     const nomeBebidaEscolhida = document.querySelector(nomeBebida);
@@ -78,7 +78,7 @@ function escolherBebida(selecionado,nomeBebida,valorBebida){
 
 }
 
-function escolherSobremesa(selecionado,nomeSobremesa,valorSobremesa){
+function escolherSobremesa(selecionado,nomeSobremesa,valorSobremesa,icone){
 
     const sobremesaEscolhida = document.querySelector(selecionado);
     const nomeSobremesaEscolhida = document.querySelector(nomeSobremesa);
@@ -119,6 +119,64 @@ function notaFiscal(){
     const procurarSobremesa = document.querySelector(".nome-sobremesa-selecionada").innerHTML;
     const procurarValorSobremesa = document.querySelector(".valor-sobremesa-selecionada").innerHTML;
 
+    const abrirTelaConfirmacao = document.querySelector(".tela-pos-pedido")
+    abrirTelaConfirmacao.classList.remove("desativar")
+
+
+    const somaTotal = Number(procurarValorPrato) + Number(procurarValorBebida) + Number(procurarValorSobremesa)
+
+    // const mensagem = "Olá, gostaria de fazer o pedido: \n"+
+    // "- Prato: " + procurarPrato + "\n"+
+    // "- Bebida: " + procurarBebida + "\n"+
+    // "- Sobremesa: " + procurarSobremesa + "\n"+
+    // "- Total: R$" + somaTotal.toFixed(2)
+
+    // const url = encodeURI("https://wa.me/55999695914?text="+mensagem)
+
+    // window.open(url)
+
+    // ADICIONAR NOME NA TELA
+
+    const mostrarNomePrato = document.querySelector(".confirmacao-nome-prato")
+    mostrarNomePrato.innerHTML = procurarPrato
+
+    const mostrarNomeBebida = document.querySelector(".confirmacao-nome-bebida")
+    mostrarNomeBebida.innerHTML = procurarBebida
+    
+    const mostrarNomeSobremesa = document.querySelector(".confirmacao-nome-sobremesa")
+    mostrarNomeSobremesa.innerHTML = procurarSobremesa
+
+    // ADICIONAR VALOR DE CADA ITEM NA TELA
+
+    const mostrarValorPrato = document.querySelector(".confirmacao-valor-prato")
+    mostrarValorPrato.innerHTML = "R$ " + procurarValorPrato
+
+    const mostrarValorBebida = document.querySelector(".confirmacao-valor-bebida")
+    mostrarValorBebida.innerHTML = "R$ " + procurarValorBebida
+    
+    const mostrarValorSobremesa = document.querySelector(".confirmacao-valor-sobremesa")
+    mostrarValorSobremesa.innerHTML = "R$ " + procurarValorSobremesa
+
+    // ADICIONAR VALOR TOTAL NA TELA
+
+    const valorTotal = document.querySelector(".confirmacao-valor-total")
+    valorTotal.innerHTML = "R$ " + somaTotal.toFixed(2)
+}
+
+function chamar(){
+
+    const procurarPrato = document.querySelector(".nome-prato-selecionado").innerHTML;
+    const procurarValorPrato = document.querySelector(".valor-prato-selecionado").innerHTML;
+
+    const procurarBebida = document.querySelector(".nome-bebida-selecionada").innerHTML;
+    const procurarValorBebida = document.querySelector(".valor-bebida-selecionada").innerHTML;
+
+    const procurarSobremesa = document.querySelector(".nome-sobremesa-selecionada").innerHTML;
+    const procurarValorSobremesa = document.querySelector(".valor-sobremesa-selecionada").innerHTML;
+
+    const abrirTelaConfirmacao = document.querySelector(".tela-pos-pedido")
+    abrirTelaConfirmacao.classList.remove("desativar")
+
 
     const somaTotal = Number(procurarValorPrato) + Number(procurarValorBebida) + Number(procurarValorSobremesa)
 
@@ -128,8 +186,12 @@ function notaFiscal(){
     "- Sobremesa: " + procurarSobremesa + "\n"+
     "- Total: R$" + somaTotal.toFixed(2)
 
-    const url = encodeURI("https://wa.me/55999695914?text="+mensagem)
+    const url = encodeURIComponent(mensagem)
 
-    window.open(url)
+    window.open("https://wa.me/?text=" + url)
+}
 
+function cancelar(){
+    const abrirTelaConfirmacao = document.querySelector(".tela-pos-pedido")
+    abrirTelaConfirmacao.classList.add("desativar")
 }
