@@ -1,108 +1,126 @@
-function selecionarPrato(a,b){
+function finalizar(){
+    if(document.querySelector(".prato-selecionado") !== null & document.querySelector(".bebida-selecionada") !== null
+    & document.querySelector(".sobremesa-selecionada") !== null){
 
-    const pratoSelecionado = document.querySelector(a);
-	const possuiClasse = pratoSelecionado.classList.contains("prato-selecionado");
+        const finalizar = document.querySelector(".menu-finalizar");
+        finalizar.classList.add("desativar")
 
-    const mostrar = document.querySelector(".prato-selecionado")
-    const mostrarValor = document.querySelector(".valor-prato-selecionado")
+        const confirmar = document.querySelector(".menu-confirmar")
+        confirmar.classList.remove("desativar")
+    }
+}
 
-    if(mostrar !== null){
+function escolherPrato(selecionado,nomePrato,valorPrato){
 
-            mostrar.classList.remove("prato-selecionado");
-            mostrarValor.classList.remove("valor-prato-selecionado")
+    const pratoEscolhido = document.querySelector(selecionado);
+    const nomePratoEscolhido = document.querySelector(nomePrato);
+    const valorPratoEscolhido = document.querySelector(valorPrato);
 
-                const elemento = document.querySelector(a);
-                elemento.classList.add("prato-selecionado");
-
-                const selecionarValor = document.querySelector(b);
-                selecionarValor.classList.add("valor-prato-selecionado")
+    if(document.querySelector(".prato-selecionado") === null){
+        pratoEscolhido.classList.add("prato-selecionado");
+        nomePratoEscolhido.classList.add("nome-prato-selecionado");
+        valorPratoEscolhido.classList.add("valor-prato-selecionado");
     }
 
     else{
+        const pratoMarcado = document.querySelector(".prato-selecionado");
+        const nomePratoMarcado = document.querySelector(".nome-prato-selecionado");
+        const valorPratoMarcado = document.querySelector(".valor-prato-selecionado");
 
-        if(possuiClasse===false){
-            const elemento = document.querySelector(a);
-            elemento.classList.add("prato-selecionado");
+        pratoMarcado.classList.remove("prato-selecionado");
+        nomePratoMarcado.classList.remove("nome-prato-selecionado");
+        valorPratoMarcado.classList.remove("valor-prato-selecionado");
 
-            const selecionarValor = document.querySelector(b);
-            selecionarValor.classList.add("valor-prato-selecionado")
-
-        }
-
+        pratoEscolhido.classList.add("prato-selecionado");
+        nomePratoEscolhido.classList.add("nome-prato-selecionado");
+        valorPratoEscolhido.classList.add("valor-prato-selecionado");
     }
 
-    // const selecionarValor = document.querySelector(b);
-    // selecionarValor.classList.add("valor-prato-selecionado")
+    finalizar()
 }
 
-function selecionarBebida(a,b){
+function escolherBebida(selecionado,nomeBebida,valorBebida){
 
-    const bebidaSelecionado = document.querySelector(a);
-	const possuiClasse = bebidaSelecionado.classList.contains("bebida-selecionado");
+    const bebidaEscolhida = document.querySelector(selecionado);
+    const nomeBebidaEscolhida = document.querySelector(nomeBebida);
+    const valorBebidaEscolhida = document.querySelector(valorBebida);
 
-    const mostrar = document.querySelector(".bebida-selecionado");
-    const mostrarValorBebida = document.querySelector(".valor-bebida-selecionado")
-
-    if(mostrar !== null){
-
-            mostrar.classList.remove("bebida-selecionado");
-            mostrarValorBebida.classList.remove("valor-bebida-selecionado");
-            
-
-                const elemento = document.querySelector(a);
-                elemento.classList.add("bebida-selecionado");
-
-                const selecionarValor = document.querySelector(b);
-                selecionarValor.classList.add("valor-bebida-selecionado")
+    if(document.querySelector(".bebida-selecionada") === null){
+        bebidaEscolhida.classList.add("bebida-selecionada");
+        nomeBebidaEscolhida.classList.add("nome-bebida-selecionada");
+        valorBebidaEscolhida.classList.add("valor-bebida-selecionada");
     }
 
     else{
+        const bebidaMarcada = document.querySelector(".bebida-selecionada");
+        const nomeBebidaMarcada = document.querySelector(".nome-bebida-selecionada");
+        const valorBebidaMarcada = document.querySelector(".valor-bebida-selecionada");
 
-        if(possuiClasse===false){
-            const elemento = document.querySelector(a);
-            elemento.classList.add("bebida-selecionado");
+        bebidaMarcada.classList.remove("bebida-selecionada");
+        nomeBebidaMarcada.classList.remove("nome-bebida-selecionada");
+        valorBebidaMarcada.classList.remove("valor-bebida-selecionada");
 
-            const selecionarValor = document.querySelector(b);
-            selecionarValor.classList.add("valor-bebida-selecionado")
-        }
-
+        bebidaEscolhida.classList.add("bebida-selecionada");
+        nomeBebidaEscolhida.classList.add("nome-bebida-selecionada");
+        valorBebidaEscolhida.classList.add("valor-bebida-selecionada");
     }
-    // const selecionarValorDois = document.querySelector(".valor-bebida-selecionado");
-    // alert(selecionarValorDois.innerHTML)
+
+    finalizar()
+
 }
 
-// function selecionarSobremesa(a,b){
+function escolherSobremesa(selecionado,nomeSobremesa,valorSobremesa){
 
-//     const sobremesaSelecionado = document.querySelector(a);
-// 	const possuiClasse = sobremesaSelecionado.classList.contains("sobremesa-selecionado");
+    const sobremesaEscolhida = document.querySelector(selecionado);
+    const nomeSobremesaEscolhida = document.querySelector(nomeSobremesa);
+    const valorSobremesaEscolhida = document.querySelector(valorSobremesa);
 
-//     const mostrar = document.querySelector(".sobremesa-selecionado")
+    if(document.querySelector(".sobremesa-selecionada") === null){
+        sobremesaEscolhida.classList.add("sobremesa-selecionada");
+        nomeSobremesaEscolhida.classList.add("nome-sobremesa-selecionada");
+        valorSobremesaEscolhida.classList.add("valor-sobremesa-selecionada");
+    }
 
-//     if(mostrar !== null){
+    else{
+        const sobremesaMarcada = document.querySelector(".sobremesa-selecionada");
+        const nomeSobremesaMarcada = document.querySelector(".nome-sobremesa-selecionada");
+        const valorSobremesaMarcada = document.querySelector(".valor-sobremesa-selecionada");
 
-//             mostrar.classList.remove("sobremesa-selecionado");
+        sobremesaMarcada.classList.remove("sobremesa-selecionada");
+        nomeSobremesaMarcada.classList.remove("nome-sobremesa-selecionada");
+        valorSobremesaMarcada.classList.remove("valor-sobremesa-selecionada");
 
-//                 const elemento = document.querySelector(a);
-//                 elemento.classList.add("sobremesa-selecionado");
-//     }
+        sobremesaEscolhida.classList.add("sobremesa-selecionada");
+        nomeSobremesaEscolhida.classList.add("nome-sobremesa-selecionada");
+        valorSobremesaEscolhida.classList.add("valor-sobremesa-selecionada");
+    }
 
-//     else{
+    finalizar()
 
-//         if(possuiClasse===false){
-//             const elemento = document.querySelector(a);
-//             elemento.classList.add("sobremesa-selecionado");
-//         }
-
-//     }
-// }
+}
 
 function notaFiscal(){
 
-    const selecionarValorDois = document.querySelector(".valor-prato-selecionado");
+    const procurarPrato = document.querySelector(".nome-prato-selecionado").innerHTML;
+    const procurarValorPrato = document.querySelector(".valor-prato-selecionado").innerHTML;
 
-    const selecionarValorUm = document.querySelector(".valor-bebida-selecionado");
+    const procurarBebida = document.querySelector(".nome-bebida-selecionada").innerHTML;
+    const procurarValorBebida = document.querySelector(".valor-bebida-selecionada").innerHTML;
 
-    const soma = Number(selecionarValorDois.innerHTML) + Number(selecionarValorUm.innerHTML)
+    const procurarSobremesa = document.querySelector(".nome-sobremesa-selecionada").innerHTML;
+    const procurarValorSobremesa = document.querySelector(".valor-sobremesa-selecionada").innerHTML;
 
-    alert(soma);
+
+    const somaTotal = Number(procurarValorPrato) + Number(procurarValorBebida) + Number(procurarValorSobremesa)
+
+    const mensagem = "Olá, gostaria de fazer o pedido: \n"+
+    "- Prato: " + procurarPrato + "\n"+
+    "- Bebida: " + procurarBebida + "\n"+
+    "- Sobremesa: " + procurarSobremesa + "\n"+
+    "- Total: R$" + somaTotal.toFixed(2)
+
+    const url = encodeURI("https://wa.me/55999695914?text="+mensagem)
+
+    window.open(url)
+
 }

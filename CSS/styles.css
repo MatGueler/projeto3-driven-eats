@@ -85,19 +85,19 @@ h3{
 
 }
 
-.bebida-selecionado{
+.bebida-selecionada{
 
     border-color: green;
 
 }
 
-.sobremesa-selecionado{
+.sobremesa-selecionada{
 
     border-color: green;
 
 }
 
-.valor-prato-selecionado{
+/* .valor-prato-selecionado{
 
 }
 
@@ -109,6 +109,9 @@ h3{
     
 }
 
+.nome-prato-selecionado{
+
+} */
 
 .pedido > img{
     width: 140px;
@@ -118,7 +121,7 @@ h3{
 }
 
 .nome-pedido{
-    ont-size: 16px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -153,18 +156,17 @@ h5{
     background-color: white;
 }
 
-/* .menu-finalizar > button{
-    
+.menu-confirmar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 80px;
+    align-items: center;
+    height: 100px;
     width: 100%;
-    margin: 0 40px;
-    border-radius: 100px;
-    cursor: pointer;
-    background-color: #CBCBCB;
-} */
+    background-color: white;
+}
 
 .menu-finalizar > button{
     
@@ -176,7 +178,24 @@ h5{
     margin: 0 40px;
     border-radius: 100px;
     cursor: pointer;
+    background-color: #CBCBCB;
+}
+
+.menu-confirmar > button{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    margin: 0 40px;
+    border-radius: 100px;
+    cursor: pointer;
     background-color: #32B72F;
+}
+
+.desativar{
+    display: none;
 }
 
 h6{
