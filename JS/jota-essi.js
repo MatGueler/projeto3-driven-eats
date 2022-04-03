@@ -10,30 +10,39 @@ function finalizar(){
     }
 }
 
-function escolherPrato(selecionado,nomePrato,valorPrato){
+function escolherPrato(selecionado,nomePrato,valorPrato,icone){
 
     const pratoEscolhido = document.querySelector(selecionado);
     const nomePratoEscolhido = document.querySelector(nomePrato);
     const valorPratoEscolhido = document.querySelector(valorPrato);
+    const iconePratoEscolhido = document.querySelector(icone);
 
     if(document.querySelector(".prato-selecionado") === null){
         pratoEscolhido.classList.add("prato-selecionado");
         nomePratoEscolhido.classList.add("nome-prato-selecionado");
         valorPratoEscolhido.classList.add("valor-prato-selecionado");
+        iconePratoEscolhido.classList.add("icone-selecionado")
+        iconePratoEscolhido.classList.remove("desativar")
+
     }
 
     else{
         const pratoMarcado = document.querySelector(".prato-selecionado");
         const nomePratoMarcado = document.querySelector(".nome-prato-selecionado");
         const valorPratoMarcado = document.querySelector(".valor-prato-selecionado");
+        const iconePratoSelecionado = document.querySelector(".icone-selecionado")
 
         pratoMarcado.classList.remove("prato-selecionado");
         nomePratoMarcado.classList.remove("nome-prato-selecionado");
         valorPratoMarcado.classList.remove("valor-prato-selecionado");
+        iconePratoSelecionado.classList.remove("icone-selecionado")
+        iconePratoSelecionado.classList.add("desativar")
 
         pratoEscolhido.classList.add("prato-selecionado");
         nomePratoEscolhido.classList.add("nome-prato-selecionado");
         valorPratoEscolhido.classList.add("valor-prato-selecionado");
+        iconePratoEscolhido.classList.add("icone-selecionado")
+        iconePratoEscolhido.classList.remove("desativar")
     }
 
     finalizar()

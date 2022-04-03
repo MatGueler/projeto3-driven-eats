@@ -35,7 +35,7 @@
     
         <div class="pedidos">
     
-            <div class="pedido prato-1" onclick="escolherPrato('.prato-1','.nome-prato-1','.valor-prato-1')">
+            <div class="pedido prato-1" onclick="escolherPrato('.prato-1','.nome-prato-1','.valor-prato-1','.icone-prato-1')">
     
                 <img src="https://img.itdg.com.br/tdg/images/recipes/000/018/897/164773/164773_original.jpg?w=1200">
     
@@ -46,11 +46,15 @@
                 <div class="valor">
                     <h4>R$</h4><h4 class="valor-prato-1">1.00</h4>
                 </div>
+
+                <div class="icone-prato-1 desativar">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </div>
                 
     
             </div>
 
-            <div class="pedido prato-2" onclick="escolherPrato('.prato-2','.nome-prato-2','.valor-prato-2')">
+            <div class="pedido prato-2" onclick="escolherPrato('.prato-2','.nome-prato-2','.valor-prato-2','.icone-prato-2')">
     
                 <img src="https://img.itdg.com.br/tdg/images/recipes/000/018/897/164773/164773_original.jpg?w=1200">
     
@@ -60,6 +64,10 @@
     
                 <div class="valor">
                     <h4>R$</h4><h4 class="valor-prato-2">5.00</h4>
+                </div>
+
+                <div class="icone-prato-2 desativar">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
                 </div>
                 
     
@@ -174,5 +182,6 @@
     </button>
 </div>
 
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
