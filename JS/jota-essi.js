@@ -122,6 +122,9 @@ function notaFiscal(){
     const abrirTelaConfirmacao = document.querySelector(".tela-pos-pedido")
     abrirTelaConfirmacao.classList.remove("desativar")
 
+    const colocarTelaFundo = document.querySelector(".tela-fundo");
+    colocarTelaFundo.classList.remove("desativar")
+
 
     const somaTotal = Number(procurarValorPrato) + Number(procurarValorBebida) + Number(procurarValorSobremesa)
 
@@ -194,4 +197,7 @@ function chamar(){
 function cancelar(){
     const abrirTelaConfirmacao = document.querySelector(".tela-pos-pedido")
     abrirTelaConfirmacao.classList.add("desativar")
+
+    const colocarTelaFundo = document.querySelector(".tela-fundo");
+    colocarTelaFundo.classList.add("desativar")
 }
